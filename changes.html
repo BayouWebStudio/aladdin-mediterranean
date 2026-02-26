@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Request changes to your Aladdin Mediterranean Grill website">
+    <title>Request Website Changes | Aladdin Mediterranean Grill</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background: linear-gradient(135deg, #d2691e 0%, #ff6347 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .required::after {
+            content: " *";
+            color: #ff6347;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            color: #333;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d2691e;
+            box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .radio-item input[type="radio"] {
+            width: auto;
+            margin: 0;
+            accent-color: #d2691e;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-input {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .file-input-button {
+            display: block;
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(210, 105, 30, 0.1);
+            border: 2px dashed rgba(210, 105, 30, 0.5);
+            border-radius: 8px;
+            text-align: center;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-input-button:hover {
+            background: rgba(210, 105, 30, 0.2);
+            border-color: #d2691e;
+            color: #333;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #d2691e, #ff6347);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(210, 105, 30, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+        }
+
+        .footer-credit {
+            text-align: center;
+            margin-top: 40px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .footer-credit a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            opacity: 0.9;
+        }
+
+        .decorative-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .form-container {
+                padding: 25px;
+            }
+            
+            body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decorative-pattern"></div>
+    
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Aladdin Mediterranean Grill</a>
+        
+        <div class="header">
+            <h1>Request Website Changes</h1>
+            <p>Need updates to your Aladdin Mediterranean Grill website? Let us know what you'd like to change.</p>
+        </div>
+
+        <div class="form-container">
+            <form action="https://formsubmit.co/bayouwebstudio@gmail.com" method="POST" enctype="multipart/form-data">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="Site Change Request — Aladdin Mediterranean Grill">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://bayouwebstudio.github.io/aladdin-mediterranean/index.html?message=thank-you">
+                <input type="hidden" name="site_name" value="Aladdin Mediterranean Grill">
+
+                <div class="form-group">
+                    <label for="name" class="required">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="change-type">What would you like to change?</label>
+                    <select id="change-type" name="change_type">
+                        <option value="">Select a change type...</option>
+                        <option value="Update Gallery Photos">Update Gallery Photos</option>
+                        <option value="Change Text/Content">Change Text/Content</option>
+                        <option value="Update Contact Info">Update Contact Info</option>
+                        <option value="Update Hours">Update Hours</option>
+                        <option value="Add/Remove Services">Add/Remove Services</option>
+                        <option value="Update Menu Items">Update Menu Items</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description" class="required">Description</label>
+                    <textarea id="description" name="description" placeholder="Describe the changes you'd like in detail..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="images">Upload Images (Optional)</label>
+                    <div class="file-input-wrapper">
+                        <input type="file" id="images" name="attachment" class="file-input" multiple accept="image/*">
+                        <label for="images" class="file-input-button">
+                            📎 Click to upload images or drag and drop
+                        </label>
+                    </div>
+                    <small style="color: #666; margin-top: 5px; display: block;">
+                        For menu updates, new food photos, or reference images
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label>Priority</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="no-rush" name="priority" value="No rush">
+                            <label for="no-rush">No rush</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="few-days" name="priority" value="Within a few days" checked>
+                            <label for="few-days">Within a few days</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="asap" name="priority" value="ASAP">
+                            <label for="asap">ASAP</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Change Request</button>
+            </form>
+        </div>
+
+        <div class="footer-credit">
+            Website change request system by <a href="#">Bayou Web Studios</a>
+        </div>
+    </div>
+
+    <script>
+        // File input feedback
+        document.getElementById('images').addEventListener('change', function() {
+            const button = document.querySelector('.file-input-button');
+            const fileCount = this.files.length;
+            
+            if (fileCount > 0) {
+                button.textContent = `📎 ${fileCount} file${fileCount > 1 ? 's' : ''} selected`;
+                button.style.borderColor = '#d2691e';
+                button.style.color = '#333';
+            } else {
+                button.textContent = '📎 Click to upload images or drag and drop';
+                button.style.borderColor = 'rgba(210, 105, 30, 0.5)';
+                button.style.color = '#666';
+            }
+        });
+
+        // Check for thank you message
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('message') === 'thank-you') {
+            alert('Thank you! Your change request has been submitted successfully. We\'ll get back to you soon.');
+        }
+    </script>
+</body>
+</html>
